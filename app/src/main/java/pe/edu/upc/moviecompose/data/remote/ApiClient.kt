@@ -3,13 +3,12 @@ package pe.edu.upc.moviecompose.data.remote
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-object ApiClient
-{
-    private const val API_BASE_URL ="https://api.themoviedb.org/3/movie/"
+object ApiClient {
 
+    private const val API_BASE_URL = "https://api.themoviedb.org/3/movie/"
     private var apiService: ApiService? = null
 
-    fun build(): ApiService{
+    fun build(): ApiService {
         val retrofit = Retrofit.Builder()
             .baseUrl(API_BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
@@ -18,4 +17,5 @@ object ApiClient
         apiService = retrofit.create(ApiService::class.java)
         return apiService as ApiService
     }
+
 }

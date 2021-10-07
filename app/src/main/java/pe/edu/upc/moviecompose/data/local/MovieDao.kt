@@ -5,10 +5,11 @@ import pe.edu.upc.moviecompose.data.model.Movie
 
 @Dao
 interface MovieDao {
+
     @Query("select * from movies")
     fun fetchMovies(): List<Movie>
 
-    @Query("select * from movies where id = :id")
+    @Query("select * from movies where id =:id")
     fun fetchById(id: Int): List<Movie>
 
     @Insert
